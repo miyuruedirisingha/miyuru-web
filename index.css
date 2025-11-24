@@ -1,0 +1,90 @@
+/* Page palette and basic typography */
+body {
+     background-color: #6A0DAD; /* purple */
+     color: #ffffff; /* readable on purple */
+     font-family: Arial, Helvetica, sans-serif;
+     line-height: 1.6;
+     margin: 40px;
+}
+
+/* Centered page container */
+.container {
+     max-width: 800px;
+     margin: 0 auto;
+}
+
+/* Heading style */
+h1 {
+     color: #ffffff;
+     text-align: center;
+     margin-bottom: 16px;
+}
+
+p {
+     color: #ffffff;
+}
+
+/* --- Todo app styles (mobile-first, responsive) --- */
+.todo-app {
+     background: rgba(255,255,255,0.04);
+     border-radius: 8px;
+     padding: 16px;
+     box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.todo-form {
+     display: flex;
+     gap: 8px;
+     margin-bottom: 12px;
+}
+
+#todo-input {
+     flex: 1 1 auto;
+     padding: 10px 12px;
+     border: 1px solid rgba(255,255,255,0.15);
+     border-radius: 6px;
+     background: rgba(255,255,255,0.04);
+     color: #ffffff;
+     font-size: 16px;
+}
+
+#todo-input::placeholder { color: rgba(255,255,255,0.7); }
+
+#add-btn {
+     padding: 10px 14px;
+     background: #005bb5;
+     border: none;
+     color: #fff;
+     border-radius: 6px;
+     cursor: pointer;
+}
+
+.todo-list { list-style: none; padding: 0; margin: 0; }
+.todo-item {
+     display: flex;
+     gap: 12px;
+     align-items: center;
+     padding: 10px;
+     border-radius: 6px;
+     margin-bottom: 8px;
+     background: rgba(0,0,0,0.12);
+}
+.todo-item.completed { opacity: 0.7; text-decoration: line-through; }
+.todo-item button { background: transparent; border: none; color: #fff; cursor: pointer; }
+
+.todo-footer { display:flex; gap:12px; align-items:center; margin-top:12px; }
+.spacer { flex:1 1 auto; }
+.clear-btn { background: transparent; color: rgba(255,255,255,0.9); border:1px solid rgba(255,255,255,0.08); padding:6px 10px; border-radius:6px; cursor:pointer; }
+
+/* Container sizing responsive tweaks */
+.container { padding-left:16px; padding-right:16px; }
+
+@media (min-width: 700px) {
+     .container { max-width: 800px; margin-left:auto; margin-right:auto; }
+     .todo-form { gap:12px; }
+     #todo-input { font-size: 18px; }
+}
+
+/* Utility */
+.visually-hidden { position:absolute !important; height:1px; width:1px; overflow:hidden; clip:rect(1px,1px,1px,1px); white-space:nowrap; }
+
