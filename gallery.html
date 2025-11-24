@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery — My Web Site</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="site-title"><a href="index.html">My Web Site</a></h1>
+      <nav class="site-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>Gallery</h2>
+    <p>Example images (use your own images by replacing the placeholders).</p>
+
+    <div class="gallery-grid">
+      <div class="photo" style="background: linear-gradient(135deg,#c3ec52,#0ba29d);"></div>
+      <div class="photo" style="background: linear-gradient(135deg,#f6d365,#fda085);"></div>
+      <div class="photo" style="background: linear-gradient(135deg,#a18cd1,#fbc2eb);"></div>
+      <div class="photo" style="background: linear-gradient(135deg,#84fab0,#8fd3f4);"></div>
+      <div class="photo" style="background: linear-gradient(135deg,#fccb90,#d57eeb);"></div>
+      <div class="photo" style="background: linear-gradient(135deg,#ff9a9e,#fecfef);"></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> My Web Site.</p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

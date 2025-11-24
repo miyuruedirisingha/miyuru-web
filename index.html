@@ -1,38 +1,65 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Simple Todo</title>
-  <link rel="stylesheet" href="index.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home — My Web Site</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <h1>My Todo</h1>
-      <p class="lead">A small responsive todo app (saved locally in your browser).</p>
-    </div>
-  </header>
+    <header class="site-header">
+        <div class="container header-inner">
+            <h1 class="site-title"><a href="index.html">My Web Site</a></h1>
+            <nav class="site-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
 
-  <main class="container">
-    <section id="todo-app" class="todo-app" aria-labelledby="app-title">
-      <h2 id="app-title" class="visually-hidden">Todo application</h2>
+    <main class="container">
+        <section class="hero">
+            <h2>Welcome to my web site!</h2>
+            <p>This is a simple, clean five-page site template. Use it to add your content, images and links.</p>
+            <p><a class="button" href="about.html">Learn more about us</a></p>
+        </section>
 
-      <form id="todo-form" class="todo-form" aria-label="Add todo">
-        <input id="todo-input" type="text" placeholder="Add a task..." aria-label="New task" required>
-        <button id="add-btn" type="submit">Add</button>
-      </form>
+        <section class="features">
+            <article>
+                <h3>Our Services</h3>
+                <p>Short intro to services. See the Services page for details.</p>
+            </article>
+            <article>
+                <h3>Photo Gallery</h3>
+                <p>Quick preview of our work. Visit the Gallery to view examples.</p>
+            </article>
+            <article>
+                <h3>Contact Us</h3>
+                <p>Send a message via the Contact page and we'll reply soon.</p>
+            </article>
+        </section>
+    </main>
 
-      <ul id="todo-list" class="todo-list" aria-live="polite"></ul>
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; <span id="year"></span> My Web Site. All rights reserved.</p>
+        </div>
+    </footer>
 
-      <div class="todo-footer">
-        <span id="todo-count">0 items</span>
-        <div class="spacer"></div>
-        <button id="clear-btn" type="button" class="clear-btn">Clear completed</button>
-      </div>
-    </section>
-  </main>
-
-  <script src="index.js" defer></script>
+    <script>
+        // small script to set current year and highlight active nav link
+        document.getElementById('year').textContent = new Date().getFullYear();
+        (function markActive(){
+            const links = document.querySelectorAll('.site-nav .nav-link');
+            links.forEach(a => {
+                if (location.pathname.endsWith(a.getAttribute('href')) || (location.pathname === '/' && a.getAttribute('href') === 'index.html')) {
+                    a.classList.add('active');
+                }
+            });
+        })();
+    </script>
 </body>
 </html>

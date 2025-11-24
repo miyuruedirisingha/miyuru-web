@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Services — My Web Site</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="site-title"><a href="index.html">My Web Site</a></h1>
+      <nav class="site-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <article class="content">
+      <h2>Our Services</h2>
+      <p>We offer a range of services to help you build and maintain a strong web presence.</p>
+
+      <section class="service-list">
+        <div class="service-card">
+          <h3>Web Design</h3>
+          <p>Modern, responsive designs tailored to your brand.</p>
+        </div>
+        <div class="service-card">
+          <h3>Development</h3>
+          <p>Fast and accessible front-end and back-end solutions.</p>
+        </div>
+        <div class="service-card">
+          <h3>Maintenance</h3>
+          <p>Continuous updates, backups and performance checks.</p>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> My Web Site.</p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
