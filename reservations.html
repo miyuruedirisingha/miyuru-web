@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reservations — My Restaurant</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="site-title"><a href="index.html">My Restaurant</a></h1>
+      <nav class="site-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="menu.html" class="nav-link">Menu</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="reservations.html" class="nav-link">Reservations</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>Make a Reservation</h2>
+    <p>Book a table — this demo shows a preview only and does not send booking data.</p>
+
+    <form id="reservation-form" class="contact-form">
+      <label>
+        Name
+        <input type="text" name="name" required>
+      </label>
+      <label>
+        Email
+        <input type="email" name="email" required>
+      </label>
+      <label>
+        Phone
+        <input type="tel" name="phone">
+      </label>
+      <label>
+        Date
+        <input type="date" name="date" required>
+      </label>
+      <label>
+        Time
+        <input type="time" name="time" required>
+      </label>
+      <label>
+        Party Size
+        <input type="number" name="party" min="1" max="20" value="2" required>
+      </label>
+      <label>
+        Special Requests
+        <textarea name="requests" rows="3"></textarea>
+      </label>
+      <div>
+        <button type="submit" class="button">Request Reservation</button>
+      </div>
+    </form>
+
+    <div id="reservation-result" aria-live="polite" style="margin-top:1rem"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> My Restaurant.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('reservation-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      const data = new FormData(this);
+      const preview = `Reservation request (demo):\nName: ${data.get('name')}\nEmail: ${data.get('email')}\nPhone: ${data.get('phone')}\nDate: ${data.get('date')} ${data.get('time')}\nParty: ${data.get('party')}\nRequests: ${data.get('requests')}`;
+      document.getElementById('reservation-result').textContent = preview;
+      this.reset();
+    });
+  </script>
+</body>
+</html>
