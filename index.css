@@ -1,13 +1,13 @@
 /* Dark mode color scheme */
 :root{
-	--bg: #0f1720; /* neutral dark */
-	--surface: #111827;
-	--card: #0b1220;
-	--text: #f6f0e9;
-	--muted: #c9bfb6;
-	--accent: #d97706; /* warm amber accent */
+	--bg: #0f2b1d; /* deep green background */
+	--surface: #102a20; /* slightly lighter surface */
+	--card: #0b2418; /* card background */
+	--text: #e7f6ef; /* soft green-tinted text */
+	--muted: #a7c3b3; /* muted text */
+	--accent: #86efac; /* mint accent */
 	--border: rgba(255,255,255,0.04);
-	--shadow: 0 6px 18px rgba(9,6,4,0.55);
+	--shadow: 0 6px 18px rgba(4,8,6,0.6);
 }
 * { box-sizing: border-box; }
 html,body{ height:100%; }
