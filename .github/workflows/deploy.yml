@@ -3,7 +3,7 @@ name: Deploy HTML Site to EC2 using Docker
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   deploy:
