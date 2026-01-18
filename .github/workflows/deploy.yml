@@ -1,4 +1,4 @@
-name: Deploy to EC2
+name: Deploy HTML Site to EC2 using Docker
 
 on:
   push:
@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: SSH to EC2 and deploy
+      - name: Deploy to EC2 via SSH
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.EC2_HOST }}
@@ -22,5 +22,6 @@ jobs:
             docker rm miyuru-site || true
             docker build -t miyuru .
             docker run -d -p 80:80 --name miyuru-site miyuru
+
            
         
